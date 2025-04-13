@@ -15,7 +15,10 @@ connectCloudinary()
 
 //middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://doctor-apointment-booking.vercel.app'],
+    credentials: true
+  }));
 
 // api endpoints
 app.use('/api/admin',adminRouter)
