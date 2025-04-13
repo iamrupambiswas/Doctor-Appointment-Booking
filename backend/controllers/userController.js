@@ -1,11 +1,10 @@
 import validator from "validator"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import userModel from "../models/userModel.js"
 import doctorModel from "../models/doctorsModel.js"
 import jwt from "jsonwebtoken"
 import {v2 as cloudinary} from "cloudinary"
 import appointmentModel from "../models/appointmentModel.js"
-import razorpay from "razorpay"
 
 
 // API to register user
@@ -220,16 +219,7 @@ const cancelAppointment = async (req, res) => {
         console.log(error);
         res.json({success:false, message:error.message});
     }
-}
+} 
 
-const razorpayInstance = new razorpay({
-    key_id:'',
-    key_secret:''
-})
-
-// API to make payment
-const paymentRazorpay = async (req, res) => {
-    
-}
 
 export {registerUser, loginUser, getUserProfile, updateUserProfile, bookAppointment, listAppointments, cancelAppointment}
