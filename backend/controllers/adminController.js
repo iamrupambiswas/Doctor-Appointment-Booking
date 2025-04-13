@@ -9,10 +9,10 @@ import jwt from 'jsonwebtoken'
 const addDoctor = async (req,res) => {
 
     try {
-        const { name, email, password, speciality, degree, experience, about, available, fees, address } = req.body;
+        const { name, email, password, speciality, degree, experience, about, fees, address } = req.body;
         const imageFile = req.file
 
-        if( !name || !email || !password || !speciality || !degree || !experience || !about || !available || !fees || !address){
+        if( !name || !email || !password || !speciality || !degree || !experience || !about || !fees || !address){
             return res.json({success:false, message:"Missing Details"})
         }
 
@@ -76,4 +76,15 @@ const loginAdmin = async (req,res) => {
     }
 }
 
-export {addDoctor, loginAdmin}
+// API to get all doctors list for the admin panel
+const allDoctors = async (req,res) => {
+    try {
+        const doctors = await doctorModel.find({}).select('-password');
+        res.json({success:true, doctors});
+    } catch(error) {
+        console.log(error);
+        res.json({success:false, message:error.message});
+    }
+}
+
+export {addDoctor, loginAdmin, allDoctors}

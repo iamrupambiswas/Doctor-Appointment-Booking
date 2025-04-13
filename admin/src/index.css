@@ -1,2 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
+
+*{
+  font-family: Outfit, sans-serif;
+}
+
+@theme {
+  --color-primary: #5f6FFF;
+  --color-primaryDark: #4A57E6;
+  --tw-border-color: #e5e7eb;
+}
+
+@layer base {
+
+  /* Apply the border color globally to all elements with a border */
+  .border,
+  [border],
+  .border-b,
+  .border-t,
+  .border-l,
+  .border-r { /* Include the attribute selector for elements with the "border" attribute */
+    border-color: var(--tw-border-color);
+  }
+
+  .button, [role="button"]{
+    background-color: black;
+    cursor: pointer;
+  }
+
+  button{
+    cursor: pointer;
+  }
+}
+
+
+
+::-webkit-scrollbar{
+  @apply hidden
+}
+
+@layer components, utilities, theme;
