@@ -119,13 +119,13 @@ npm start
 | Module   | Platform | Link                                       |
 |----------|----------|--------------------------------------------|
 | Frontend | Vercel   | [https://doctor-apointment-booking.vercel.app/](https://doctor-apointment-booking.vercel.app/) |
-| Backend  | Render   | [Your Render Backend URL]                   |
+| Backend  | Render   | ---                   |
 
 
 ## 👨‍💻 Author
 
 Built with ❤️ by Rupam Biswas
-GitHub: [iamrupambiswas](https://www.google.com/search?q=https://github.com/iamrupambiswas)
+GitHub: [iamrupambiswas](https://github.com/iamrupambiswas)
 
 💼 LinkedIn: [iamrupambiswas](https://www.linkedin.com/in/iamrupambiswas/)
 
