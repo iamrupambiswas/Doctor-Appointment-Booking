@@ -1,34 +1,44 @@
-import express from 'express'
-import cors from 'cors'
-import 'dotenv/config'
+import express from 'express';
+import cors from 'cors';
+import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
 import adminRouter from './routes/adminRoute.js';
 import doctorRouter from './routes/doctorRoute.js';
-import userRoute from './routes/userRoute.js'; 
+import userRoute from './routes/userRoute.js';
 
-//app config
-const app = express()
-const port = process.env.PORT || 4000
-connectDB()
-connectCloudinary()
+// App config
+const app = express();
+const port = process.env.PORT || 4000;
 
-//middlewares
-app.use(express.json())
+// Connect to database and cloudinary
+connectDB();
+connectCloudinary();
+
+// Middleware
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://doctor-apointment-booking.vercel.app'],
-    credentials: true
-  }));
+  origin: ['http://localhost:5173', 'https://doctor-apointment-booking.vercel.app'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
-// api endpoints
-app.use('/api/admin',adminRouter)
-app.use('/api/doctor',doctorRouter)
-app.use('/api/user',userRoute)
+// Enable preflight across all routes
+app.options('*', cors());
 
-app.get('/', (req, res)=>{
-    res.send('API working')
-})
+app.use(express.json());
 
-app.listen(port, ()=>{
-    console.log("listening on port: ", port);
-})
+// Routes
+app.use('/api/admin', adminRouter);
+app.use('/api/doctor', doctorRouter);
+app.use('/api/user', userRoute);
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.send('API working');
+});
+
+// Start server
+app.listen(port, () => {
+  console.log('Server listening on port:', port);
+});
