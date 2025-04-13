@@ -1,17 +1,5 @@
 # 🩺 Doctor Appointment Booking System
 
-A full-stack doctor appointment booking platform designed for both patients and administrators.  
-Users can easily book appointments with available doctors, while admins manage doctors, schedules, and bookings.
-
-🔗 **Live Demo**: [https://doctor-apointment-booking.vercel.app/](https://doctor-apointment-booking.vercel.app/)
-
----
-
-## 📁 Directory Structure
-Markdown
-
-# 🩺 Doctor Appointment Booking System
-
 A full-stack doctor appointment booking platform designed for both patients and administrators.
 Users can easily book appointments with available doctors, while admins manage doctors, schedules, and bookings.
 
