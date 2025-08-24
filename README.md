@@ -3,7 +3,7 @@
 A full-stack doctor appointment booking platform designed for both patients and administrators.
 Users can easily book appointments with available doctors, while admins manage doctors, schedules, and bookings.
 
-🔗 **Live Demo**: [https://doctor-apointment-booking.vercel.app/](https://doctor-apointment-booking.vercel.app/)
+🔗 **Live Demo**: [https://my-doctor-appointment-booking.vercel.app](https://my-doctor-appointment-booking.vercel.app)
 
 ---
 
@@ -106,7 +106,7 @@ npm start
 
 | Module   | Platform | Link                                       |
 |----------|----------|--------------------------------------------|
-| Frontend | Vercel   | [https://doctor-apointment-booking.vercel.app/](https://doctor-apointment-booking.vercel.app/) |
+| Frontend | Vercel   | [https://my-doctor-appointment-booking.vercel.app](https://my-doctor-appointment-booking.vercel.app) |
 | Backend  | Render   | ---                   |
 
 
